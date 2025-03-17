@@ -14,9 +14,9 @@
                     <p>Username:  {{usuario.username}}</p>
                     <p>Email: {{usuario.email}}</p>
 
-                    <div class="d-flex justify-content-around py-5 gap-3">
+                    <div class="d-flex justify-content-between py-5 gap-3">
 
-                        <button class="btn btn-warning" [routerLink]="['usuarios/:id', usuario.id]">Ver Usuario</button>
+                        <button class="btn btn-warning" [routerLink]="['/usuarios:/id']">Ver Usuario</button>
                         <button class="btn btn-warning">Eliminar Usuario</button>
                         <button class="btn btn-warning" [routerLink]="['actualizarUsuario/:id']">Actualizar Usuario</button>
 

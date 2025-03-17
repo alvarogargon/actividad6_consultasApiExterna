@@ -3,11 +3,11 @@ import { IUsuario } from '../../interfaces/iusuario.interface';
 import { UsuariosService } from '../../services/usuarios.service';
 import { IResponse } from '../../interfaces/iresponse.interface';
 import { RouterLink } from '@angular/router';
-import { toast, NgxSonnerToaster } from 'ngx-sonner';
+import { toast } from 'ngx-sonner';
 
 @Component({
   selector: 'app-usuarios',
-  imports: [RouterLink, NgxSonnerToaster],
+  imports: [RouterLink],
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css'
 })
@@ -40,8 +40,10 @@ export class UsuariosComponent {
       this.anteriorPagina = response.page == 1 ? 0 : response.page -1;
       this.misUsuarios = response.results;
     } catch(error){
-      alert("Error")
+      alert('Error al cargar los usuarios');
     }
   }
+
+
 
 }
