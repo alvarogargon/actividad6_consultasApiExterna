@@ -1,9 +1,10 @@
 <section class="usuarios">
-    <div class="container text-center py-4 gap-4">
+    <div class="container text-center py-4 ">
+        
         @for(usuario of misUsuarios; track usuario.id){
             
-            <section class="container py-4 border border-3 rounded-5 border-danger">
-                <div class="row">
+            <section class="container py-4 border border-3 rounded-5 border-danger mb-4 ">
+                <div class="row ">
                   <figure class="col-12 col-md-3">
                     <img class="img-fluid rounded-5" [src]="usuario.image" [alt]="usuario.username">
                   </figure>

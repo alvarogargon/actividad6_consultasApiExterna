@@ -12,7 +12,7 @@ export class UsuariosService {
   private baseUrl: string = "https://peticiones.online/api/users"
 
   getAll(page: number =0): Promise<IResponse> {
-    let url = (page === 0) ? this.baseUrl : this.baseUrl + `?page = ${page}`
+    let url = (page === 0) ? this.baseUrl : this.baseUrl + `?page=${page}`
     return lastValueFrom(this.httpClient.get<IResponse>(url))
   }
 
