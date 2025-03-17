@@ -3,10 +3,11 @@ import { IUsuario } from '../../interfaces/iusuario.interface';
 import { UsuariosService } from '../../services/usuarios.service';
 import { IResponse } from '../../interfaces/iresponse.interface';
 import { RouterLink } from '@angular/router';
+import { toast, NgxSonnerToaster } from 'ngx-sonner';
 
 @Component({
   selector: 'app-usuarios',
-  imports: [RouterLink],
+  imports: [RouterLink, NgxSonnerToaster],
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css'
 })
