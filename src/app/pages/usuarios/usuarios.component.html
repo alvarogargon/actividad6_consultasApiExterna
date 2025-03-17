@@ -1,28 +1,40 @@
 <section class="usuarios">
-    <div class=" container-fluid row gap-4 justify-content-center">
+    <div class="container text-center py-4 gap-4">
         @for(usuario of misUsuarios; track usuario.id){
             
-            <section class="p-4">
-                <div class="row align-items-center">
-                    <figure class="col-12 col-md-3">
-                        <img class="img-fluid rounded-5" [src]="usuario.image" [alt]="usuario.username">
-                    </figure>
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <h1 class="text-danger">{{usuario.first_name}}</h1>
-                        <h1 class="text-danger">{{usuario.last_name}}</h1>
-                        <p class="text">Username:  {{usuario.username}}</p>
-                        <p class="text">Email: {{usuario.email}}</p>
+            <section class="container py-4 border border-3 rounded-5 border-danger">
+                <div class="row">
+                  <figure class="col-12 col-md-3">
+                    <img class="img-fluid rounded-5" [src]="usuario.image" [alt]="usuario.username">
+                  </figure>
+                  <div class="col-12 col-md-9">
+                    <h1 class="text-danger">{{usuario.first_name}}</h1>
+                    <h1 class="text-danger">{{usuario.last_name}}</h1>
+                    <p>Username:  {{usuario.username}}</p>
+                    <p>Email: {{usuario.email}}</p>
+
+                    <div class="d-flex justify-content-between py-5 gap-3">
+
+                        <button class="btn btn-warning" [routerLink]="['/usuario']">Ver Usuario</button>
+                        <button class="btn btn-warning">Eliminar Usuario</button>
+                        <button class="btn btn-warning" [routerLink]="['/actualizarUsuario']">Actualizar Usuario</button>
+
                     </div>
+
+                  </div>
                 </div>
-            </section>
-        }
+              </section>
+              }
+        
     </div>
 </section>
+
 <div class="d-flex justify-content-around py-5 gap-3">
+
     <button class="btn btn-danger" (click)="anterior()">PREV</button> 
 
     <p class="border rounded-5 p-3">{{page}}</p>
 
-    <button class="btn btn-danger"
-      (click)="siguiente()">NEXT</button>
+    <button class="btn btn-danger"(click)="siguiente()">NEXT</button>
+
 </div>
