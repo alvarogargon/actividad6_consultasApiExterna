@@ -41,4 +41,12 @@ export class NuevoUsuarioComponent {
     })
   }
 
+  getDataForm() {
+    this.userForm.reset()
+  }
+
+  checkControl(controlName: string, errorName: string): boolean | undefined {
+    return this.userForm.get(controlName)?.hasError(errorName) && this.userForm.get(controlName)?.touched
+  }
+
 }
