@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IUsuario } from '../../interfaces/iusuario.interface';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-usuarios-card',
@@ -9,6 +10,14 @@ import { IUsuario } from '../../interfaces/iusuario.interface';
   styleUrl: './usuarios-card.component.css'
 })
 export class UsuariosCardComponent {
-  @Input() miUsuario!: IUsuario;
+  @Input() id: string = ""
+  miUsuario!: IUsuario | any
+  usuariosService = inject(UsuariosService)
+
+  async ngOnInit() {
+    let id = this.id
+
+    this.miUsuario = await this.usuariosService.getById(id)
+  }
 
 }
