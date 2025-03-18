@@ -1,1 +1,10 @@
-<p>usuarios-card works!</p>
+<div class="card bg-dark border border-3 border-white" [routerLink]="['usuarios', miUsuario.id]">
+    <figure>
+      <img class="imagesBall" [src]="miUsuario.image" [alt]="miUsuario.first_name">
+    </figure>
+    <div class="p-3 text-center">
+      <h3 class="text-white">{{miUsuario.first_name}}</h3>
+      <p class="text-warning">{{miUsuario.last_name}} - {{miUsuario.username}}</p>
+    </div>
+  </div>
+  
