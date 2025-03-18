@@ -13,11 +13,11 @@ export class NuevoUsuarioComponent {
 
   constructor() {
     this.userForm = new FormGroup({
-      nombre: new FormControl("", [
+      first_name: new FormControl("", [
         Validators.required,
         Validators.minLength(3)
       ]),
-      apellido: new FormControl("", [
+      last_name: new FormControl("", [
         Validators.required,
         Validators.minLength(3)
       ]),
