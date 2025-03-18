@@ -10,18 +10,6 @@ import { Router } from '@angular/router';
   styleUrl: './lista-usuarios.component.css'
 })
 export class ListaUsuariosComponent {
-  @Input() idUsuario: string = ""
-  usuario! : IUsuario | any
-  usuarioService = inject(UsuariosService)
-  router = inject(Router)
+  @Input() miUsuario!: IUsuario 
 
-  async ngOnInit() {
-    let id = this.idUsuario
-
-    try {
-      this.usuario = await this.usuarioService.getById(id)
-    } catch(error) {
-      alert("Se ha producido eorror")
-    }
-  }
 }

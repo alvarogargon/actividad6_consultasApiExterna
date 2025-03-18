@@ -40,7 +40,7 @@ export class UsuariosComponent {
       this.anteriorPagina = response.page == 1 ? 0 : response.page -1;
       this.misUsuarios = response.results;
     } catch(error){
-      alert('Error al cargar los usuarios');
+      toast.error('Error al cargar los usuarios');
     }
   }
 
