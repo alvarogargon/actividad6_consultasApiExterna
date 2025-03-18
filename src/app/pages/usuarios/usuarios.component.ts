@@ -2,12 +2,12 @@ import { Component, inject } from '@angular/core';
 import { IUsuario } from '../../interfaces/iusuario.interface';
 import { UsuariosService } from '../../services/usuarios.service';
 import { IResponse } from '../../interfaces/iresponse.interface';
-import { RouterLink } from '@angular/router';
 import { toast } from 'ngx-sonner';
+import { UsuariosCardComponent } from '../../components/usuarios-card/usuarios-card.component';
 
 @Component({
   selector: 'app-usuarios',
-  imports: [RouterLink],
+  imports: [ UsuariosCardComponent],
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css'
 })

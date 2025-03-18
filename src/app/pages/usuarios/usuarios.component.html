@@ -3,28 +3,8 @@
         
         @for(usuario of misUsuarios; track usuario.id){
             
-            <section class="container py-4 border border-3 rounded-5 border-danger mb-4 ">
-                <div class="row ">
-                  <figure class="col-12 col-md-3">
-                    <img class="img-fluid rounded-5" [src]="usuario.image" [alt]="usuario.username">
-                  </figure>
-                  <div class="col-12 col-md-9">
-                    <h1 class="text-danger">{{usuario.first_name}}</h1>
-                    <h1 class="text-danger">{{usuario.last_name}}</h1>
-                    <p>Username:  {{usuario.username}}</p>
-                    <p>Email: {{usuario.email}}</p>
+           <app-usuarios-card [miUsuario]="usuario"></app-usuarios-card>
 
-                    <div class="d-flex justify-content-between py-5 gap-3">
-
-                        <button class="btn btn-warning" [routerLink]="['/usuariosCard', usuario._id]">Ver Usuario</button>
-                        <button class="btn btn-warning">Eliminar Usuario</button>
-                        <button class="btn btn-warning" [routerLink]="['/actualizarUsuario']">Actualizar Usuario</button>
-
-                    </div>
-
-                  </div>
-                </div>
-              </section>
               }
         
     </div>

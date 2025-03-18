@@ -10,14 +10,7 @@ import { UsuariosService } from '../../services/usuarios.service';
   styleUrl: './usuarios-card.component.css'
 })
 export class UsuariosCardComponent {
-  @Input() id: string = ""
-  miUsuario!: IUsuario | any
-  usuariosService = inject(UsuariosService)
+  @Input() miUsuario!: IUsuario | any
 
-  async ngOnInit() {
-    let id = this.id
-
-    this.miUsuario = await this.usuariosService.getById(id)
-  }
 
 }
