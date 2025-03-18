@@ -12,5 +12,6 @@ export const routes: Routes = [
     { path: "usuarios/:id", component: UsuariosComponent },
     { path: "nuevoUsuario", component: NuevoUsuarioComponent },
     { path: "actualizarUsuario/:id", component: ActualizarUsuarioComponent },
+    { path: "actualizarUsuario", component: ActualizarUsuarioComponent },
     { path: "**", component: C404Component },
 ];
