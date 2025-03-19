@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators, AbstractControl } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { toast } from 'ngx-sonner';
 
 @Component({
   selector: 'app-nuevo-usuario',
@@ -11,6 +12,7 @@ import { RouterLink } from '@angular/router';
 export class NuevoUsuarioComponent {
 
   userForm: FormGroup;
+  router = inject(Router);
 
   constructor() {
     this.userForm = new FormGroup({
@@ -49,5 +51,17 @@ export class NuevoUsuarioComponent {
   checkControl(controlName: string, errorName: string): boolean | undefined {
     return this.userForm.get(controlName)?.hasError(errorName) && this.userForm.get(controlName)?.touched
   }
+
+  botonHecho() {
+        if (this.userForm.valid) {
+          toast.success('¡Usuario creado correctamente!');
+          // console.log('Datos del formulario:', this.userForm.value);
+          this.router.navigate(['/usuarios']);
+        } else {
+          toast.error('Por favor, rellena todos los campos correctamente antes de continuar.');
+          this.userForm.markAllAsTouched();
+          
+        }
+      }
 
 }
