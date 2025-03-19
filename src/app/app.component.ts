@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from './shared/nav/nav.component';
-import { NgxSonnerToaster } from 'ngx-sonner';
+import { NgxSonnerToaster, toast } from 'ngx-sonner';
 
 @Component({
   selector: 'app-root',

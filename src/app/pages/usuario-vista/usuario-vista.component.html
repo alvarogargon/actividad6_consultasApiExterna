@@ -1,5 +1,6 @@
 
 
+
 <div class="card border border-3 border-white bg-custom vh-100"
  [routerLink]="['/usuarios/:id', usuario._id]">
 
@@ -28,7 +29,9 @@
       <div class="d-flex justify-content-center py-5 gap-3">
   
           <button class="btn btn-warning rounded-5 text-danger" [routerLink]="['/actualizarUsuario', usuario._id]">Actualizar</button>
-          <button class="btn btn-warning rounded-5 text-danger">Borrar</button>
+
+          <button class="btn btn-warning rounded-5 text-danger" (click)="eliminarUsuario(usuario._id)">Borrar</button>
+
           <button class="btn btn-warning rounded-5 text-danger" [routerLink]="['/usuarios']">Volver</button>
   
       </div>
