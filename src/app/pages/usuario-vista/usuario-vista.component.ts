@@ -42,12 +42,15 @@ export class UsuarioVistaComponent {
 
   eliminarUsuario(id: string) {
     toast(`Vas a borrar al usuario ${this.usuario.first_name} ${this.usuario.last_name} `, {
+  
       action: {
+
         label: 'Aceptar',
         onClick: async () => {
           await this.usuariosService.delete(id)
           if (this.deleteItemEmit.observed) {
             this.deleteItemEmit.emit(true)
+            
           } else {
             this.router.navigate(['/usuarios']);
           }
