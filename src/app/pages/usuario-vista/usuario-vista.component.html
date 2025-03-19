@@ -1,35 +1,41 @@
 
-<p>{{usuario.first_name}}</p>
-<!--
-<div class="card border border-3 border-white"
- [routerLink]="['/usuarios/:id', miUsuario.id]">
 
-    <figure>
-      <img [src]="miUsuario.image" [alt]="miUsuario.first_name">
+
+<div class="card border border-3 border-white bg-custom vh-100"
+ [routerLink]="['/usuarios/:id', usuario._id]">
+
+    <figure class="text-center p-3 mt-5">
+      <img [src]="usuario.image" [alt]="usuario.first_name" class="img-fluid rounded-5">
     </figure>
 
-    <div class="p-3 text-center">
-        <p class="text-dark">Nombre Y Apellido</p>
-        <p class="text-warning">{{miUsuario.first_name}} {{miUsuario.last_name}}</p>
-  
-      </div>
-      <div class="p-3 text-center">
-        <p class="text-dark">Username</p>
-        <p class="text-warning">{{miUsuario.username}}</p>
-  
-      </div>
-      <div class="p-3 text-center">
-        <p class="text-dark">Email</p>
-        <p class="text-warning">{{miUsuario.email}}</p>
-  
-      </div>
+    <div class="border border-3 w-25 mx-auto bg-dark rounded-5">
 
-    <div class="d-flex justify-content-around py-5 gap-3">
+      <div class="p-3 text-center">
+          <p class="text-warning">Nombre Y Apellido</p>
+          <p class="text-white">{{usuario.first_name}} {{usuario.last_name}}</p>
+    
+        </div>
+        <div class="p-3 text-center">
+          <p class="text-warning">Username</p>
+          <p class="text-white">{{usuario.username}}</p>
+    
+        </div>
+        <div class="p-3 text-center">
+          <p class="text-warning">Email</p>
+          <p class="text-white">{{usuario.email}}</p>
+    
+        </div>
+  
+      <div class="d-flex justify-content-center py-5 gap-3">
+  
+          <button class="btn btn-warning rounded-5 text-danger" [routerLink]="['/actualizarUsuario', usuario._id]">Actualizar</button>
 
-        <button class="btn btn-warning" [routerLink]="['/actualizarUsuario']">Actualizar</button>
-        <button class="btn btn-warning">Borrar</button>
-        <button class="btn btn-warning" [routerLink]="['/usuarios']">Volver</button>
+          <button class="btn btn-warning rounded-5 text-danger" (click)="eliminarUsuario(usuario._id)">Borrar</button>
+
+          <button class="btn btn-warning rounded-5 text-danger" [routerLink]="['/usuarios']">Volver</button>
+  
+      </div>
 
     </div>
+
   </div>
--->
