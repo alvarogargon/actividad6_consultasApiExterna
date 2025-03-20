@@ -15,6 +15,7 @@ export class UsuarioVistaComponent {
   usuariosService = inject(UsuariosService)
   usuario!: IUsuario
   @Output() deleteItemEmit: EventEmitter<Boolean> = new EventEmitter();
+  
 
   router = inject(Router)
 
